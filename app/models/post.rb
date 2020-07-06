@@ -1,5 +1,6 @@
 class Post < ApplicationRecord
   belongs_to :user
+  has_many :comments
   
   validates :title, :user_id, presence: true
   validates :body, presence: true, if: -> { link.blank? }
